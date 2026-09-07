@@ -14,6 +14,14 @@ app.use(
 
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+    res.status(200).json({
+        status: 'ok',
+        service:
+            'Persona AI is a replicate of a person whom we want just change system prompt in setting',
+    });
+});
+
 app.get('/health', (_req, res) => {
     res.status(200).json({
         status: 'ok',
