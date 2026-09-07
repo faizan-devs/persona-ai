@@ -1,19 +1,19 @@
 # Dependencies
 node_modules/
-.pnpm-store/
 
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*.local
+!.env.example
 
-# Build output
+# Build
 dist/
-build/
 .next/
 out/
+build/
 
-# Testing / coverage
+# Testing
 coverage/
 
 # Logs
@@ -21,19 +21,13 @@ coverage/
 npm-debug.log*
 pnpm-debug.log*
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
 # IDE
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
+.vscode/
 .idea/
 
 # TypeScript
 *.tsbuildinfo
-
-# Temporary files
-tmp/
-temp/
