@@ -2,22 +2,25 @@
   "name": "persona-ai",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@11.26.0",
   "engines": {
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "pnpm --parallel --filter ./apps/* dev",
-    "build": "pnpm --recursive build",
-    "lint": "eslint .",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check",
-    "typecheck": "pnpm --recursive typecheck",
-    "test": "pnpm --recursive test"
+    "dev:backend": "pnpm --dir backend dev",
+    "dev:frontend": "pnpm --dir frontend dev",
+    "typecheck:backend": "pnpm --dir backend typecheck",
+    "typecheck:frontend": "pnpm --dir frontend typecheck",
+    "lint:backend": "pnpm --dir backend lint",
+    "lint:frontend": "pnpm --dir frontend lint",
+    "build:backend": "pnpm --dir backend build",
+    "build:frontend": "pnpm --dir frontend build"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.10.0",
+    "globals": "^17.12.0",
     "prettier": "^3.9.6",
     "typescript-eslint": "^8.69.0"
   }
