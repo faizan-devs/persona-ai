@@ -1,0 +1,24 @@
+{
+  "name": "persona-ai",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.26.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter ./apps/* dev",
+    "build": "pnpm --recursive build",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "typecheck": "pnpm --recursive typecheck",
+    "test": "pnpm --recursive test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.6",
+    "typescript-eslint": "^8.69.0"
+  }
+}
