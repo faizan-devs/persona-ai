@@ -1,0 +1,16 @@
+services:
+    postgres:
+        image: postgres:17
+        container_name: personaai-postgres
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: personaai
+            POSTGRES_PASSWORD: personaai_dev
+            POSTGRES_DB: personaai
+        ports:
+            - '5432:5432'
+        volumes:
+            - personaai_postgres_data:/var/lib/postgresql/data
+
+volumes:
+    personaai_postgres_data:
