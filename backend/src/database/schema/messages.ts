@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, varchar, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, varchar, timestamp, integer } from 'drizzle-orm/pg-core';
 
 import { conversations } from './conversations.js';
 
@@ -7,13 +7,25 @@ export const messages = pgTable('messages', {
 
     conversationId: uuid('conversation_id')
         .notNull()
-        .references(() => conversations.id),
+        .references(() => conversations.id, {
+            onDelete: 'cascade',
+        }),
 
     role: varchar('role', {
         length: 20,
     }).notNull(),
 
     content: text('content').notNull(),
+
+    model: varchar('model', {
+        length: 100,
+    }),
+
+    inputTokens: integer('input_tokens'),
+
+    outputTokens: integer('output_tokens'),
+
+    totalTokens: integer('total_tokens'),
 
     createdAt: timestamp('created_at').defaultNow().notNull(),
 });
