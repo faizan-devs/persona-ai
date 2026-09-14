@@ -13,5 +13,9 @@ export const users = pgTable('users', {
         length: 100,
     }),
 
+    avatarUrl: varchar('avatar_url', {
+        length: 500,
+    }),
+
     createdAt: timestamp('created_at').defaultNow().notNull(),
 });
