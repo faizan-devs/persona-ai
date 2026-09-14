@@ -15,10 +15,10 @@
     "docker:restart": "docker compose restart",
     "docker:ps": "docker compose ps",
     "docker:logs": "docker compose logs -f postgres",
+    "docker:reset": "docker compose down -v && docker compose up -d",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:setup": "pnpm docker:up && pnpm db:migrate",
-    "docker:reset": "docker compose down -v && docker compose up -d"
+    "db:setup": "pnpm docker:up && pnpm db:migrate"
   },
   "dependencies": {
     "cors": "^2.8.6",
