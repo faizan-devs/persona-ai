@@ -7,13 +7,17 @@ export const personas = pgTable('personas', {
         length: 100,
     }).notNull(),
 
+    slug: varchar('slug', {
+        length: 50,
+    })
+        .notNull()
+        .unique(),
+
     avatarUrl: varchar('avatar_url', {
         length: 500,
     }),
 
     description: text('description'),
-
-    systemPrompt: text('system_prompt'),
 
     createdAt: timestamp('created_at').defaultNow().notNull(),
 });
