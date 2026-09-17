@@ -13,6 +13,9 @@ dist/
 out/
 build/
 
+# Data
+data/*/raw
+
 # Testing
 coverage/
 
