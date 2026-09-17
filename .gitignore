@@ -13,8 +13,11 @@ dist/
 out/
 build/
 
-# Data
-data/*/raw
+# Persona source material
+data/*/raw/
+
+# Generated/processed persona data
+data/*/processed/
 
 # Testing
 coverage/
