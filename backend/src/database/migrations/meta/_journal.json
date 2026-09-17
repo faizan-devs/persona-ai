@@ -15,6 +15,13 @@
       "when": 1789409816433,
       "tag": "0001_skinny_young_avengers",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789677851111,
+      "tag": "0002_normal_meltdown",
+      "breakpoints": true
     }
   ]
 }
