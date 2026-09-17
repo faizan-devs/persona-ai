@@ -1,6 +1,7 @@
 import { pgTable, uuid, text, varchar, timestamp, integer } from 'drizzle-orm/pg-core';
 
 import { conversations } from './conversations.js';
+import { personas } from './personas.js';
 
 export const messages = pgTable('messages', {
     id: uuid('id').defaultRandom().primaryKey(),
@@ -10,6 +11,10 @@ export const messages = pgTable('messages', {
         .references(() => conversations.id, {
             onDelete: 'cascade',
         }),
+
+    personaId: uuid('persona_id')
+        .notNull()
+        .references(() => personas.id),
 
     role: varchar('role', {
         length: 20,
